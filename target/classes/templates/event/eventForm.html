@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	  
+	  <head>
+	  	<title>EventsApp</title>
+	  	<!--Import Google Icon Font-->
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+	
+	    <!--Let browser know website is optimized for mobile-->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <link rel="stylesheet" href="style/style.css"/>		  
+	  </head>
+	  
+	  <body>
+	  	<header>
+			  <nav class = "menu">
+			    <div class="nav-wrapper">
+			      <a href="#!" class="brand-logo left">Event Registration</a>
+			      <ul class="right hide-on-med-and-down">
+			        <li><a class="waves-effect waves-light btn" href="/events"><i class="material-icons left">add_box</i>Events List</a></li>
+			      </ul>
+			    </div>
+			  </nav>
+		</header>
+	  	<br></br>
+
+	  	<form method="post" class="container eventForm">
+	  		Name: <input type="text" value="" name="name"/>
+	  		<div class = "row">
+	  			<div class = "input class col s5">Local: <input type="text" value="" name= "local"/></div>
+		  		<div class = "input class col s3">Date: <input type="date" value="" name= "date"/></div>
+		  		<div class = "input class col s3">Hour: <input type="time" value="" name= "hour"/></div>
+		  		
+	  		</div>
+	  		<button class="btn waves-effect waves-light" type="submit">
+	  			Save
+	  		    <i class="material-icons left">fast_forward</i>
+	  		</button>
+	  		
+	  	</form>
+	  	<!--JavaScript at end of body for optimized loading-->
+   	 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	  </body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<title></title>
+		<!--Import Google Icon Font-->
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+	
+	    <!--Let browser know website is optimized for mobile-->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <link rel="stylesheet" href="style/style.css"/>
+	</head>
+
+	<body>
+		<header>
+			  <nav class = "menu">
+			    <div class="nav-wrapper">
+			      <a href="#!" class="brand-logo left">Events List</a>
+			      <ul class="right hide-on-med-and-down">
+			        <li><a class="waves-effect waves-light btn active" href="/registerEvent"><i class="material-icons left">add_box</i>Register Event</a></li>
+			      </ul>
+			    </div>
+			  </nav>
+		</header>
+		<br></br>
+		
+		<table class = "container">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Local</th>
+					<th>Date</th>
+					<th>Hour</th>
+					<th>Delete</th>
+				</tr>
+			</thead>	
+		
+			<tbody>
+				<tr th:each = "event: ${event}">
+					<td><a th:href="${(#mvc.url('EC#eventDetails').arg(0, event.code)).build()}"><span th:text = ${event.name}></span></a></td>
+					<td><span th:text = ${event.local}></span></td>
+					<td><span th:text = ${event.date}></span></td>
+					<td><span th:text = ${event.hour}></span></td>	
+					<td><a class="waves-effect waves-light btn-small active" th:href="${(#mvc.url('EC#deleteEvent').arg(0, event.code)).build()}"><i class="material-icons left">delete_forever</i></a></td>
+			</tbody>	
+		</table>
+			
+		
+		<!--JavaScript at end of body for optimized loading-->
+	    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	</body>
+	  
+ 
+</html>
